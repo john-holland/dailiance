@@ -1,5 +1,5 @@
 # discourse
-chat gpt and cogview 2 interaction library
+language profile & stable diffusion image generation interaction library
 
 ## events
 
