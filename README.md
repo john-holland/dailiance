@@ -1,4 +1,4 @@
-# discourse
+# dailiance
 language profile & stable diffusion image generation interaction library
 
 ## events
