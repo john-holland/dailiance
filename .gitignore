@@ -99,4 +99,292 @@ coverage/
 
 # Local configuration
 config.local.json
-config.dev.json 
+config.dev.json
+
+# Media and Assets
+# Keep reference images and video frames
+!assets/references/
+!assets/references/images/
+!assets/references/video-frames/
+!assets/references/youtube-frames/
+
+# Ignore generated/processed media
+assets/generated/
+assets/processed/
+assets/temp/
+*.processed.png
+*.processed.jpg
+*.processed.webp
+*.generated.png
+*.generated.jpg
+*.generated.webp
+
+# Multiplayer
+# Keep multiplayer configuration and assets
+!multiplayer/config/
+!multiplayer/assets/
+!multiplayer/schemas/
+
+# Ignore multiplayer runtime data
+multiplayer/sessions/
+multiplayer/logs/
+multiplayer/cache/
+multiplayer/temp/
+
+# Keep network protocol definitions
+!multiplayer/protocols/
+!multiplayer/interfaces/
+
+# Ignore generated network code
+multiplayer/generated/
+multiplayer/compiled/
+
+# Keep shared assets
+!shared/assets/
+!shared/config/
+!shared/protocols/
+
+# Ignore shared generated content
+shared/generated/
+shared/compiled/
+shared/cache/
+
+# Keep art style references
+!art-style/references/
+!art-style/palettes/
+!art-style/brushes/
+
+# Ignore generated art
+art-style/generated/
+art-style/rendered/
+art-style/temp/
+
+# ICP and Decentralized Networking
+# Keep ICP canister definitions and interfaces
+!icp/canisters/
+!icp/interfaces/
+!icp/declarations/
+!icp/dfx.json
+!icp/dfx.json.local
+
+# Keep cell tower configurations
+!icp/cell-towers/
+!icp/peer-configs/
+!icp/network-topology/
+
+# Keep smart contract definitions
+!icp/contracts/
+!icp/contracts/interfaces/
+!icp/contracts/definitions/
+
+# Ignore ICP runtime data
+icp/.dfx/
+icp/canister_ids.json
+icp/canister_ids.json.local
+icp/state/
+icp/cache/
+icp/logs/
+
+# Ignore generated ICP code
+icp/generated/
+icp/compiled/
+icp/build/
+
+# Keep P2P network definitions
+!p2p/protocols/
+!p2p/interfaces/
+!p2p/topology/
+
+# Ignore P2P runtime data
+p2p/sessions/
+p2p/cache/
+p2p/logs/
+p2p/temp/
+
+# Keep cell tower ownership records
+!p2p/ownership/
+!p2p/registry/
+!p2p/claims/
+
+# Ignore generated P2P code
+p2p/generated/
+p2p/compiled/
+
+# Keep network security definitions
+!security/certificates/
+!security/keys/
+!security/policies/
+
+# Ignore security runtime data
+security/temp/
+security/cache/
+security/logs/
+
+# Keep network monitoring configs
+!monitoring/configs/
+!monitoring/dashboards/
+!monitoring/alerts/
+
+# Ignore monitoring runtime data
+monitoring/data/
+monitoring/logs/
+monitoring/cache/
+
+# Actor Ownership and Rights
+# Keep actor definitions and rights
+!actors/definitions/
+!actors/rights/
+!actors/permissions/
+!actors/ownership/
+
+# Keep client ownership records
+!actors/clients/
+!actors/claims/
+!actors/ledger/
+
+# Ignore actor runtime data
+actors/sessions/
+actors/cache/
+actors/logs/
+actors/temp/
+
+# Keep actor state definitions
+!actors/state/
+!actors/properties/
+!actors/behaviors/
+
+# Ignore generated actor code
+actors/generated/
+actors/compiled/
+
+# Unity Network Fallback
+# Keep Unity network protocol definitions
+!unity/network/protocols/
+!unity/network/interfaces/
+!unity/network/fallback/
+
+# Keep Unity network configuration
+!unity/network/config/
+!unity/network/settings/
+!unity/network/profiles/
+
+# Ignore Unity network runtime data
+unity/network/sessions/
+unity/network/cache/
+unity/network/logs/
+unity/network/temp/
+
+# Keep Unity network state
+!unity/network/state/
+!unity/network/sync/
+!unity/network/replication/
+
+# Ignore generated Unity network code
+unity/network/generated/
+unity/network/compiled/
+
+# P2P Ledger and Anti-DDOS
+# Keep ledger definitions
+!ledger/definitions/
+!ledger/protocols/
+!ledger/consensus/
+
+# Keep client reputation data
+!ledger/reputation/
+!ledger/trust/
+!ledger/ratings/
+
+# Keep anti-DDOS rules
+!ledger/anti-ddos/
+!ledger/rules/
+!ledger/policies/
+
+# Ignore ledger runtime data
+ledger/blocks/
+ledger/transactions/
+ledger/cache/
+ledger/logs/
+
+# Keep ledger state
+!ledger/state/
+!ledger/checkpoints/
+!ledger/validators/
+
+# Ignore generated ledger code
+ledger/generated/
+ledger/compiled/
+
+# Keep client connection history
+!ledger/connections/
+!ledger/history/
+!ledger/analytics/
+
+# Ignore client runtime data
+ledger/sessions/
+ledger/temp/
+ledger/cache/
+
+# Chat System
+# Keep chat protocol definitions
+!chat/protocols/
+!chat/interfaces/
+!chat/definitions/
+
+# Keep chat UI components
+!chat/ui/
+!chat/components/
+!chat/styles/
+
+# Keep chat server configurations
+!chat/server/
+!chat/listing/
+!chat/fallback/
+
+# Ignore chat runtime data
+chat/sessions/
+chat/cache/
+chat/logs/
+chat/temp/
+
+# Keep chat state
+!chat/state/
+!chat/history/
+!chat/analytics/
+
+# Ignore generated chat code
+chat/generated/
+chat/compiled/
+
+# UI Components
+# Keep shared UI components
+!ui/components/
+!ui/styles/
+!ui/themes/
+
+# Keep engine-specific UI adapters
+!ui/roguescroll/
+!ui/unity/
+
+# Keep UI state definitions
+!ui/state/
+!ui/properties/
+!ui/behaviors/
+
+# Ignore UI runtime data
+ui/cache/
+ui/temp/
+ui/logs/
+
+# Ignore generated UI code
+ui/generated/
+ui/compiled/
+
+# Keep UI assets
+!ui/assets/
+!ui/icons/
+!ui/fonts/
+
+# Ignore processed UI assets
+ui/processed/
+ui/rendered/
+ui/optimized/ 
