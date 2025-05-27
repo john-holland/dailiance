@@ -1,0 +1,20 @@
+# Common configuration
+-cp src
+-D analyzer-optimize
+-D no-debug
+
+# Unity target
+--each
+-D unity
+-cp targets/unity
+-cs build/unity
+-main dailiance.unity.UnityMain
+--dce full
+
+# roguescroll target
+--each
+-D roguescroll
+-cp targets/roguescroll
+-js build/roguescroll/dailiance.js
+-main dailiance.roguescroll.RoguescrollMain
+--dce full 
