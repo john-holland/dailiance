@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Mathematical Foundations of the Roguescroll Engine}
+\author{Dailiance Team}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Core Transformations}
+
+\subsection{Scene Graph Transform}
+The scene graph transformation matrix $T$ for a node $n$ is defined as:
+\begin{equation}
+T_n = \prod_{i=1}^{k} T_{parent_i}
+\end{equation}
+where $k$ is the depth of the node in the hierarchy.
+
+\subsection{Quaternion Rotation}
+For a rotation quaternion $q = (w, x, y, z)$, the rotation matrix $R$ is:
+\begin{equation}
+R = \begin{bmatrix}
+1-2y^2-2z^2 & 2xy-2wz & 2xz+2wy \\
+2xy+2wz & 1-2x^2-2z^2 & 2yz-2wx \\
+2xz-2wy & 2yz+2wx & 1-2x^2-2y^2
+\end{bmatrix}
+\end{equation}
+
+\section{Physics System}
+
+\subsection{Rigidbody Dynamics}
+The equations of motion for a rigidbody:
+\begin{equation}
+\begin{aligned}
+F &= m\ddot{x} \\
+\tau &= I\dot{\omega} + \omega \times (I\omega)
+\end{aligned}
+\end{equation}
+where $F$ is force, $m$ is mass, $\tau$ is torque, $I$ is inertia tensor, and $\omega$ is angular velocity.
+
+\subsection{Collision Response}
+For a collision between bodies $A$ and $B$:
+\begin{equation}
+\begin{aligned}
+v'_A &= v_A - \frac{(1+e)(v_A - v_B) \cdot n}{1/m_A + 1/m_B} \frac{n}{m_A} \\
+v'_B &= v_B + \frac{(1+e)(v_A - v_B) \cdot n}{1/m_A + 1/m_B} \frac{n}{m_B}
+\end{aligned}
+\end{equation}
+where $e$ is the coefficient of restitution and $n$ is the collision normal.
+
+\section{Network System}
+
+\subsection{P2P Connection Graph}
+For a network of $n$ peers, the connection matrix $C$ is:
+\begin{equation}
+C_{ij} = \begin{cases}
+1 & \text{if peer } i \text{ is connected to peer } j \\
+0 & \text{otherwise}
+\end{cases}
+\end{equation}
+
+\subsection{Message Propagation}
+The probability of message delivery $P$ through $k$ hops:
+\begin{equation}
+P(k) = \prod_{i=1}^{k} p_i
+\end{equation}
+where $p_i$ is the reliability of each hop.
+
+\section{Actor System}
+
+\subsection{State Transition}
+For an actor $A$ with state $s$:
+\begin{equation}
+s_{t+1} = f(s_t, a_t, \omega_t)
+\end{equation}
+where $a_t$ is the action and $\omega_t$ is the environment state.
+
+\subsection{Ownership Verification}
+The ownership proof $\pi$ for an actor $A$:
+\begin{equation}
+\pi = H(H(A) || H(owner) || timestamp)
+\end{equation}
+where $H$ is a cryptographic hash function.
+
+\section{Rendering System}
+
+\subsection{View Frustum}
+The view frustum planes are defined by:
+\begin{equation}
+\begin{aligned}
+\text{Near}: & \quad n \cdot p + d_n = 0 \\
+\text{Far}: & \quad f \cdot p + d_f = 0 \\
+\text{Left}: & \quad l \cdot p + d_l = 0 \\
+\text{Right}: & \quad r \cdot p + d_r = 0 \\
+\text{Top}: & \quad t \cdot p + d_t = 0 \\
+\text{Bottom}: & \quad b \cdot p + d_b = 0
+\end{aligned}
+\end{equation}
+
+\subsection{Lighting Model}
+The Phong lighting equation:
+\begin{equation}
+I = k_a i_a + k_d i_d (n \cdot l) + k_s i_s (r \cdot v)^\alpha
+\end{equation}
+where $k$ are material properties, $i$ are light intensities, and $\alpha$ is the shininess factor.
+
+\section{Anti-DDOS System}
+
+\subsection{Reputation Score}
+The reputation $R$ for a client $C$:
+\begin{equation}
+R(C) = \frac{\sum_{i=1}^{n} w_i s_i}{\sum_{i=1}^{n} w_i}
+\end{equation}
+where $w_i$ are weights and $s_i$ are individual scores.
+
+\subsection{Connection Rate Limiting}
+The allowed connection rate $\lambda$:
+\begin{equation}
+\lambda = \lambda_{base} \cdot e^{-R(C)}
+\end{equation}
+where $\lambda_{base}$ is the base rate limit.
+
+\section{ICP Integration}
+
+\subsection{Canister State}
+The state $S$ of a canister $C$:
+\begin{equation}
+S(C) = (H, T, B)
+\end{equation}
+where $H$ is the hash of the current state, $T$ is the timestamp, and $B$ is the balance.
+
+\subsection{Consensus Verification}
+The consensus proof $\Pi$:
+\begin{equation}
+\Pi = \prod_{i=1}^{n} H(S_i)
+\end{equation}
+where $S_i$ are the states of participating nodes.
+
+\end{document} 

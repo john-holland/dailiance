@@ -1,36 +1,29 @@
 const path = require('path');
-const HaxeLoader = require('haxe-loader');
 
 module.exports = {
-    entry: './src/Main.hx',
+    mode: 'development',
+    entry: './src/index.ts',
     output: {
+        filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
     },
     module: {
         rules: [
             {
-                test: /\.hx$/,
-                use: [
-                    {
-                        loader: 'haxe-loader',
-                        options: {
-                            debug: true
-                        }
-                    }
-                ]
-            }
-        ]
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+        ],
     },
     resolve: {
-        extensions: ['.js', '.hx'],
-        alias: {
-            'three': path.resolve(__dirname, 'node_modules/three/build/three.js'),
-            'buzz': path.resolve(__dirname, 'node_modules/buzz/dist/buzz.js')
-        }
+        extensions: ['.tsx', '.ts', '.js'],
     },
     devServer: {
-        contentBase: './dist',
-        hot: true
-    }
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        compress: true,
+        port: 9000,
+    },
 }; 

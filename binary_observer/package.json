@@ -1,0 +1,30 @@
+{
+    "name": "binary-observer",
+    "version": "1.0.0",
+    "description": "A non-invasive binary analysis system using statistical analysis and scene graph representation",
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "webpack serve --open",
+        "build": "webpack --mode production",
+        "test": "jest"
+    },
+    "dependencies": {
+        "@tensorflow/tfjs": "^4.17.0",
+        "@tensorflow/tfjs-node": "^4.17.0",
+        "three": "^0.162.0",
+        "d3": "^7.8.5"
+    },
+    "devDependencies": {
+        "typescript": "^5.3.3",
+        "ts-loader": "^9.5.1",
+        "webpack": "^5.90.3",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.0.2",
+        "@types/node": "^20.11.19",
+        "@types/three": "^0.162.0",
+        "@types/d3": "^7.4.3",
+        "jest": "^29.7.0",
+        "@types/jest": "^29.5.12",
+        "ts-jest": "^29.1.2"
+    }
+} 
